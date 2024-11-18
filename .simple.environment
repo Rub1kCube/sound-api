@@ -1,0 +1,31 @@
+# === Docker compose setting ===
+# === Postgres setting ===
+POSTGRES_DB=postgres
+POSTGRES_USER=sound_user
+POSTGRES_PASSWORD=sound_password
+POSTGRES_PORT=5432
+
+# === Minio setting ===
+MINIO_ROOT_USER=miniousername
+MINIO_ROOT_PASSWORD=miniopassword
+
+
+# === Django setting ===
+# Database Postgres
+DEFAULT_DB_NAME=postgres
+DEFAULT_DB_USER=sound_user
+DEFAULT_DB_PASSWORD=sound_password
+DEFAULT_DB_HOST=postgres-main
+DEFAULT_DB_PORT=5432
+
+# Main
+SECRET_KEY=so_secret
+SERVER_HOST=0.0.0.0
+
+# MinIO
+MINIO_ENDPOINT=http://minio:9000
+MINIO_ACCESS_KEY=miniousername
+MINIO_SECRET_KEY=miniopassword
+
+
+

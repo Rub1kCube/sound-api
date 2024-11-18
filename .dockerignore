@@ -1,0 +1,18 @@
+**/*.pyc.*
+*.py[cod]
+.pytest_cache
+*.egg-info/
+*.egg
+/.idea
+
+# docker-compose databases storages
+/storage/
+/site-packages/
+/media/
+
+# git specific files
+deploy.sh
+README.md
+Makefile
+docker-compose.dev.yml
+docker-compose.yml
