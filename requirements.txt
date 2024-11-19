@@ -85,6 +85,10 @@ psycopg2-binary==2.9.10
 pyjwt==2.10.0
     # via djangorestframework-simplejwt
 pytest==8.3.3
+    # via
+    #   sound-api (pyproject.toml)
+    #   pytest-django
+pytest-django==4.9.0
     # via sound-api (pyproject.toml)
 python-dateutil==2.9.0.post0
     # via celery

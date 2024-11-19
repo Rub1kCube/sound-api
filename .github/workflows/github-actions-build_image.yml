@@ -1,0 +1,14 @@
+name: Docker Image CI
+
+on: [push, pull_request]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build Django App
+      run: docker build . -f Dockerfile -t sound-api:$(date +%s)
