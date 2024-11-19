@@ -1,5 +1,6 @@
 from sound.settings.env_reader import env
 
+
 # S3 compatible storage credentials.
 AWS_S3_ENDPOINT_URL = env.str('MINIO_ENDPOINT')
 AWS_ACCESS_KEY_ID = env.str('MINIO_ACCESS_KEY')

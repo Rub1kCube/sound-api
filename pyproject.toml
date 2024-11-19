@@ -18,7 +18,9 @@ dependencies = [
     'uvicorn',
     'uvicorn-worker',
     'psycopg2-binary',
-    'pytest'
+    'pytest',
+    'pytest-django',
+    'pytest-xdist',
 ]
 
 [project.optional-dependencies]
@@ -49,7 +51,7 @@ ignore = 'E741'
 
 [tool.pytest.ini_options]
 addopts = '-ra --new-first --failed-first --no-migrations'
-DJANGO_SETTINGS_MODULE = 'integration_platform_wheels.test_settings'
+DJANGO_SETTINGS_MODULE = 'sound.settings'
 filterwarnings = [
     'ignore::RuntimeWarning',
     'ignore::DeprecationWarning',
