@@ -35,10 +35,9 @@ shell: set-container
 	docker compose -f docker-compose.dev.yml exec $(c) /bin/bash -c './manage.py shell'
 
 compile-reqs: set-container
-	docker compose -f docker-compose.dev.yml run --rm $(c) bash -c 'pip install pip-tools && uv pip compile --all-extras pyproject.toml -o dev.requirements.txt'
+	docker compose -f docker-compose.dev.yml run --rm $(c) bash -c 'pip install pip-tools && uv pip compile --all-extras pyproject.toml -o requirements.txt'
 
 test: set-container
 	docker compose -f docker-compose.dev.yml run --rm $(c) bash -c 'pytest -n 4'
 pre-commit: set-container
-	docker compose -f docker-compose.dev.yml run --rm $(c) bash -c 'PRE_COMMIT_HOME=.precomcache && \
-	git config --global --add safe.directory /src && pre-commit run --all-files'
+	docker compose -f docker-compose.dev.yml run --rm $(c) bash -c 'git config --global --add safe.directory /src && PRE_COMMIT_HOME=.precomcache pre-commit run --all-files'
