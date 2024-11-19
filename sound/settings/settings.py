@@ -18,14 +18,8 @@ from sound.settings.env_reader import env
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env.str('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 SERVER_HOST = env.str('SERVER_HOST')
 
@@ -39,13 +33,17 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     # Extension
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_spectacular',
+    'rest_framework',
+    'storages',
     # Project apps
+    'apps.track.apps.TrackConfig',
+    'apps.album.apps.AlbumConfig',
 ]
 
 MIDDLEWARE = [
@@ -93,6 +91,24 @@ DATABASES = {
     },
 }
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+    ),
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Sound API',
+    'DESCRIPTION': 'Swagger UI Schema OpenAPI v3',
+    'VERSION': '1.0.0',
+    'COMPONENT_SPLIT_REQUEST': True,
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

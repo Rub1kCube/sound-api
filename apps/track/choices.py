@@ -1,0 +1,25 @@
+from django.db import models
+
+
+class GenresChoices(models.TextChoices):
+    ALTERNATIVE = 'ALTERNATIVE', 'Альтернатива'
+    BLUES = 'BLUES', 'Блюз'
+    CHANSON = 'CHANSON', 'Шансон'
+    CLASSIC = 'CLASSIC', 'Классика'
+    COUNTRY = 'COUNTRY', 'Кантри'
+    DISCO = 'DISCO', 'Диско'
+    DUBSTEP = 'DUBSTEP', 'Даб-Степ'
+    ELECTRONIC = 'ELECTRONIC', 'Электроника'
+    FONK = 'FONK', 'Фонк'
+    FUSION = 'FUSION', 'Фьюжен'
+    HIPHOP = 'HIPHOP', 'Хип-Хоп'
+    INDIE = 'INDIE', 'Индиана'
+    JAZZ = 'JAZZ', 'Джаз'
+    METAL = 'METAL', 'Металл'
+    OTHER = 'OTHER', 'Другое'
+    POP = 'POP', 'Поп'
+    POPROCK = 'POPROCK', 'Рор-Рок'
+    RAP = 'RAP', 'Реп'
+    REGGAE = 'REGGAE', 'Регги'
+    ROCK = 'ROCK', 'Рок'
+    ROMANCE = 'ROMANCE', 'Романс'

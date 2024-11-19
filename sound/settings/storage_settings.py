@@ -1,4 +1,9 @@
+from storages.backends.s3boto3 import S3Boto3Storage
+
 from sound.settings.env_reader import env
+
+
+DEFAULT_FILE_STORAGE = S3Boto3Storage
 
 
 # S3 compatible storage credentials.
